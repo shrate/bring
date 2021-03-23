@@ -11,6 +11,7 @@ FILE:AutomatiseCharts.html
 *
 FILE:DisplayChart.js
 
+var ctx = document.getElementById('chart');
 var myChart = new Chart(ctx, {
     type: 'pie',
     data: {
