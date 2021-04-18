@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+    <title>Universe</title>
+</head>
+
+<style>
+    @font-face {
+        font-family: 'Rubik-bold';
+        src: url('css/fonts/Rubik-Bold.ttf') format('truetype');
+    }
+    
+    @font-face {
+        font-family: 'Rubik';
+        src: url('css/fonts/Rubik-Light.ttf') format('truetype');
+    }
+    
+    body {
+        margin: 0%;
+        padding: 0%;
+        font-family: 'Rubik';
+    }
+    
+    h1 {
+        font-family: 'Rubik-bold';
+        color: orange;
+        font-size: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    h2 {
+        font-family: 'Rubik-bold';
+        color: teal;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    a {
+        text-decoration: none;
+        color: orange;
+    }
+    
+    footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: none;
+        padding: 0%;
+        overflow: hidden;
+        background-color: white;
+        position: sticky;
+        /* Set the navbar to fixed position */
+        top: 0;
+        /* Position the navbar at the top of the page */
+        width: 100%;
+        /* Full width */
+    }
+    
+    .navbar-icon-box img {
+        width: 200px;
+    }
+    
+    .navbar-list {
+        display: flex;
+        list-style: none;
+        padding: 10px;
+    }
+    
+    .navbar-list-point {
+        margin: auto;
+        padding: 10px;
+    }
+    
+    .navbar-list-point a {
+        font-size: 24px;
+        text-decoration: none;
+        color: teal;
+        cursor: pointer;
+    }
+    
+     ::placeholder {
+        color: white;
+    }
+    
+     :-ms-input-placeholder {
+        color: white;
+    }
+    
+     ::-ms-input-placeholder {
+        color: white;
+    }
+    
+    .border-1 {
+        border: 10px solid black;
+    }
+    
+    .border-2 {
+        border: 5px solid teal;
+    }
+    
+    .border-3 {
+        border: 3px solid orange;
+    }
+    
+    .news-table {
+        margin: auto;
+    }
+    
+    .news-table img {
+        width: 500px;
+    }
+    
+    .news-table td {
+        overflow: hidden;
+        text-align: center;
+    }
+    
+    .news-table ul {
+        list-style: none;
+        padding-left: 0%;
+    }
+    
+    @media only screen and (max-width: 768px) {
+        /* For mobile phones: */
+        body {
+            width: 100%;
+        }
+        .table-cell {
+            width: 100%;
+            border: none;
+        }
+        .table-cell canvas {
+            width: 100%;
+        }
+        .music-table {
+            display: block;
+        }
+        .table-foot {
+            border-bottom: 10px solid orange;
+        }
+    }
+</style>
+
+<body>
+    <nav class="navbar">
+        <ul class="navbar-list">
+            <li class="navbar-list-point"><a href="#music">Music</a></li>
+            <li class="navbar-list-point"><a href="education.html">Education</a></li>
+            <li class="navbar-list-point"><a href="index.php">Back</a></li>
+
+        </ul>
+    </nav>
+    <div id="music" class="music">
+        <h2 class="music-title">Music <a href="help.html">(BETA)</a></h2>
+        <div class="music-tables">
+            <div class="music-table">
+                <div class="table-cell table-head">House (Recommended for studying)</div>
+                <div class="table-cell"><iframe src="https://open.spotify.com/embed/playlist/6YFhhDfxHbpO8gaK1MZemH" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></div>
+                <div class="table-cell table-foot">
+                    <canvas id="house-chart"></canvas>
+                    <script src="app/house.js"></script>
+                </div>
+            </div>
+            <div class="music-table">
+                <div class="table-cell table-head">For the Messenger MSN users</div>
+                <div class="table-cell"><iframe src="https://open.spotify.com/embed/playlist/31HJ3HMrca2lPVKQ6emiF4" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></div>
+                <div class="table-cell table-foot">
+                    <canvas id="millenial-chart"></canvas>
+                    <script src="app/millenial.js"></script>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+
+
+
+    <!-- <table class="news-table">
+            <col width="500px" />
+            <col width="500px" />
+            <col width="500px" />
+            <tr>
+                <td class="second-priority">For the millenials and other MSN-Messenger-users</td>
+                <td><iframe src="https://open.spotify.com/embed/playlist/31HJ3HMrca2lPVKQ6emiF4" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></td>
+                <td class="second-priority"><canvas id="millenial-chart"></canvas></td>
+                <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/gh/maruthan4r/projects/millenial.js"></script>
+            </tr>
+            <tr>
+                <td class="second-priority">For the ones who are into house</td>
+                <td><iframe src="https://open.spotify.com/embed/playlist/6YFhhDfxHbpO8gaK1MZemH" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></td>
+                <td class="second-priority">Wer working on it. <a href="help.html">Help us!</a></td>
+            </tr>
+        </table>!-->
+</body>
+
+</html>
