@@ -1,0 +1,33 @@
+<?
+
+php
+
+$entry_username=$_GET["username"];
+$entry_username=$_GET["password"];
+$entry_password_hashed=hash("sha256",$_GET["password"]);
+
+echo "You entered: <br>Username:".$entry_username."<br>Password:".$entry_password." OK?<br>";
+$mysqli = new mysqli("localhost","root","Erzaismaili2002","shrate");
+
+if ($mysqli -> connect_errno) {
+  echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
+  exit();
+}
+
+$sql = "SELECT * FROM user where user_name='".$entry_username."' and user_password='".$entry_password."';";
+$result = $mysqli -> query($sql);
+
+// Associative array
+if ($result->num_rows > 0) {
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+    echo "- Name: " . $row["user_name"]. " <br>- Password: " . $row["user_password"]. "<br>";
+  }
+} else {
+  echo "0 results";
+} 
+// Free result set
+$result -> free_result();
+
+$mysqli -> close();
+?>
